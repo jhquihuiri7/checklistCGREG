@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Checklist</title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("assets/bg.jpg"); /* Replace with the path to your image */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <div class="text-white d-flex flex-column justify-content-center align-content-center" style="height: 100vh;">
+        <h1 class="mx-auto">CREA UN CKECKLIST EN INSTANTES</h1>
+        <h4 class="mx-auto">Introduce el path de directorio que deseas recorrer, y haz click en empezar o da un ENTER</h4>
+        <form action="/path" class="mt-5 mx-auto d-flex flex-lg-row justify-content-center align-items-center">
+            <div class="px-4">
+                <input type="text" name="path" style="width: 40vw; --bs-bg-opacity: .9;" class="form-control rounded-pill py-4 opacity-75 border-white" id="path">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary rounded-pill fs-3 px-5 py-3 bg-black bg-gradient opacity-75 border-black">
+                    Generar
+                </button>
+            </div>
+        </form>
+        <div id="formats" class="mt-5 pt-5 d-flex flex-lg-row justify-content-center align-content-center align-items-center">
+            <h6 class="mx-3">Formatos compatibles</h6>
+        </div>
+    </div>
+    <script src="styles/bootstrap.bundle.js"></script>
+    <script>
+        let formats = [".pdf",".xlsx",".txt"]
+        element = document.getElementById("formats")
+        formats.forEach((format)=>{
+            child = document.createElement("div")
+            child.innerText = format
+            child.className = "py-1 px-3 border border-white rounded-pill mx-2"
+            element.appendChild(child)
+        })
+    </script>
+</body>
+</html>
