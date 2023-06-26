@@ -14,7 +14,7 @@ import (
 func main() {
 	router := gin.Default()
 	router.Static("/styles","./styles")
-	router.Static("/assets","./assets")
+	router.Static("/assets","./src/assets")
 	router.GET("/", Index)
 	router.GET("/path", Path)
 	
